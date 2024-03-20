@@ -1,6 +1,6 @@
 from art import logo
 import sys 
-print(logo)
+
 
 def operator():
   print('\n + \n - \n * \n / \n')
@@ -9,18 +9,19 @@ def operator():
 
 def calcy(oprnd1,oprtr,oprnd2):
   if oprtr=='+':
-    return oprnd1+oprnd2
+    return round(oprnd1+oprnd2,2)
   elif oprtr=='-':
-    return oprnd1-oprnd2
+    return round(oprnd1-oprnd2,2)
   elif(oprtr=='*'):
-    return oprnd1*oprnd2
+    return round(oprnd1*oprnd2,2)
   elif(oprtr=='/'):
-    return oprnd1/oprnd2
+    return round(oprnd1/oprnd2,2)
   else:
     print("Invalid Operator")
     return 0
 
 def calculator()  :
+  print(logo)
   flag=True
   oprnd1=float(input("What's the first number?:"))
   oprtr=operator()
