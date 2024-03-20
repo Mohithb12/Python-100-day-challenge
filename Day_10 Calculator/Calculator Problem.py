@@ -3,7 +3,7 @@ import sys
 
 
 def operator():
-  print('\n + \n - \n * \n / \n')
+  print('\n + \n - \n * \n / \n // \n % \n ** \n')
   op=input("Pick an Operator:")
   return op
 
@@ -16,6 +16,12 @@ def calcy(oprnd1,oprtr,oprnd2):
     return round(oprnd1*oprnd2,2)
   elif(oprtr=='/'):
     return round(oprnd1/oprnd2,2)
+  elif(oprtr=='//'):
+    return round(oprnd1//oprnd2,2)
+  elif(oprtr=='%'): 
+    return round(oprnd1%oprnd2,2)
+  elif(oprtr=='**'):
+    return round(oprnd1**oprnd2,2)
   else:
     print("Invalid Operator")
     return 0
