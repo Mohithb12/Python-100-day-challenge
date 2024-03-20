@@ -17,22 +17,31 @@ def calcy(oprnd1,oprtr,oprnd2):
   elif(oprtr=='/'):
     return oprnd1/oprnd2
   else:
-    return 'enter valid operator'
-flag=True
-oprnd1=float(input("What's the first number?:"))
-while(flag) :
-  
+    print("Invalid Operator")
+    return 0
+
+def calculator()  :
+  flag=True
+  oprnd1=float(input("What's the first number?:"))
   oprtr=operator()
   oprnd2=float(input("whats the next number?:"))
-  result=calcy(oprnd1,oprtr,oprnd2)
-  print(f"{oprnd1} {oprtr} {oprnd2} = {result} ")
+  result1=calcy(oprnd1,oprtr,oprnd2)
+  print(f"{oprnd1} {oprtr} {oprnd2} = {result1} ")
+  while(flag) :
+    con=input("Press y to continue \n n to start again \n z to exit:")
+    if(con=='z'):
+      flag=False
+      sys.exit()
+    elif(con=='n'):
+      calculator()
+    
+    oprtr=operator()
+    oprnd2=float(input("whats the next number?:"))
+    
+    result=calcy(result1,oprtr,oprnd2)
+    print(f"{result1} {oprtr} {oprnd2} = {result} ")
+    result1=result
 
-  con=input("Press y to continue and n to stop:")
-  if(con=='n'):
-    flag=False
-    sys.exit()
-  else:
-    oprnd1=result
-
-
+  
+calculator()
   
